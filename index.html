@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objectif Première</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="glass-nav">
+        <ul>
+            <li class="active" data-target="dashboard" onclick="switchTab('dashboard')">🏠 Accueil</li>
+            <li data-target="program" onclick="switchTab('program')">📅 Programme</li>
+            <li data-target="stats" onclick="switchTab('stats')">📊 Stats</li>
+        </ul>
+    </nav>
+
+    <main id="app-container">
+        <section id="dashboard" class="view active-view">
+            <header class="header-section">
+                <h1>Objectif Première<br><span>14 jours pour être prêt</span></h1>
+                <p class="quote">"Chaque jour compte. La régularité crée l'avance."</p>
+            </header>
+
+            <div class="card countdown-card">
+                <h3>Rentrée dans</h3>
+                <div class="countdown-value" id="countdown-days">-- Jours</div>
+            </div>
+
+            <div class="card progress-card">
+                <h3>Progression globale</h3>
+                <p id="global-progress-text">Jours terminés : 0/14</p>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="global-progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="card today-card">
+                <h2 id="today-title">Jour actuel : --</h2>
+                <div class="time-reco">
+                    <p>Temps conseillé :</p>
+                    <ul>
+                        <li>🧮 Maths : 1h45</li>
+                        <li>⚛️ Physique : 45 min</li>
+                        <li>💻 NSI : 30-45 min</li>
+                        <li>📖 Lecture : 20-30 min</li>
+                    </ul>
+                </div>
+                <button class="btn-primary" onclick="startToday()">Commencer ma journée</button>
+            </div>
+        </section>
+
+        <section id="program" class="view">
+            <header class="header-section">
+                <h2>Programme des 14 jours</h2>
+            </header>
+            <div id="days-container"></div>
+        </section>
+
+        <section id="stats" class="view">
+            <header class="header-section">
+                <h2>Statistiques</h2>
+            </header>
+            
+            <div class="stats-grid">
+                <div class="card stat-box">
+                    <h3>Jours terminés</h3>
+                    <p class="stat-number" id="stat-days">0</p>
+                </div>
+                <div class="card stat-box">
+                    <h3>Tâches finies</h3>
+                    <p class="stat-number" id="stat-tasks">0</p>
+                </div>
+                <div class="card stat-box">
+                    <h3>Progression</h3>
+                    <p class="stat-number" id="stat-percent">0%</p>
+                </div>
+                <div class="card stat-box">
+                    <h3>Série</h3>
+                    <p class="stat-number" id="stat-streak">0 🔥</p>
+                </div>
+            </div>
+
+            <div class="card calendar-card">
+                <h3>Calendrier</h3>
+                <div class="calendar-grid" id="calendar-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
