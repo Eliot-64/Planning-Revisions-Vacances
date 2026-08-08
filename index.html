@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objectif Première</title>
+    <title>Objectif Première - 14 jours pour être prêt</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -29,7 +29,7 @@
             </div>
 
             <div class="card progress-card">
-                <h3>Progression globale</h3>
+                <h3>Progression générale</h3>
                 <p id="global-progress-text">Jours terminés : 0/14</p>
                 <div class="progress-bar-bg">
                     <div class="progress-bar-fill" id="global-progress-fill"></div>
@@ -41,10 +41,11 @@
                 <div class="time-reco">
                     <p>Temps conseillé :</p>
                     <ul>
-                        <li>🧮 Maths : 1h45</li>
+                        <li>🧮 Maths : 1h30–1h45</li>
                         <li>⚛️ Physique : 45 min</li>
-                        <li>💻 NSI : 30-45 min</li>
-                        <li>📖 Lecture : 20-30 min</li>
+                        <li>💻 NSI : 30–45 min</li>
+                        <li>🇪🇸 Espagnol : 30–40 min</li>
+                        <li>📖 Lecture : 20 min</li>
                     </ul>
                 </div>
                 <button class="btn-primary" onclick="startToday()">Commencer ma journée</button>
@@ -66,25 +67,84 @@
             <div class="stats-grid">
                 <div class="card stat-box">
                     <h3>Jours terminés</h3>
-                    <p class="stat-number" id="stat-days">0</p>
+                    <p class="stat-number" id="stat-days">0/14</p>
                 </div>
                 <div class="card stat-box">
                     <h3>Tâches finies</h3>
-                    <p class="stat-number" id="stat-tasks">0</p>
+                    <p class="stat-number" id="stat-tasks">0/0</p>
                 </div>
                 <div class="card stat-box">
-                    <h3>Progression</h3>
+                    <h3>Progression globale</h3>
                     <p class="stat-number" id="stat-percent">0%</p>
                 </div>
                 <div class="card stat-box">
-                    <h3>Série</h3>
+                    <h3>Série actuelle</h3>
                     <p class="stat-number" id="stat-streak">0 🔥</p>
                 </div>
             </div>
 
+            <div class="card subject-stats-card">
+                <h3>Progression par matière</h3>
+                
+                <div class="subject-stat-item highlight-espagnol">
+                    <div class="subject-stat-header">
+                        <span>🇪🇸 Espagnol</span>
+                        <span id="stat-espagnol-percent" class="badge-percent">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill fill-espagnol" id="bar-espagnol"></div>
+                    </div>
+                    <p class="subject-stat-details" id="stat-espagnol-tasks">0 / 0 tâches</p>
+                </div>
+
+                <div class="subject-stat-item">
+                    <div class="subject-stat-header">
+                        <span>🧮 Mathématiques</span>
+                        <span id="stat-maths-percent">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill fill-maths" id="bar-maths"></div>
+                    </div>
+                </div>
+
+                <div class="subject-stat-item">
+                    <div class="subject-stat-header">
+                        <span>⚛️ Physique-Chimie</span>
+                        <span id="stat-physique-percent">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill fill-physique" id="bar-physique"></div>
+                    </div>
+                </div>
+
+                <div class="subject-stat-item">
+                    <div class="subject-stat-header">
+                        <span>💻 NSI</span>
+                        <span id="stat-nsi-percent">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill fill-nsi" id="bar-nsi"></div>
+                    </div>
+                </div>
+
+                <div class="subject-stat-item">
+                    <div class="subject-stat-header">
+                        <span>📖 Lecture</span>
+                        <span id="stat-lecture-percent">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill fill-lecture" id="bar-lecture"></div>
+                    </div>
+                </div>
+            </div>
+
             <div class="card calendar-card">
-                <h3>Calendrier</h3>
+                <h3>Calendrier des 14 jours</h3>
                 <div class="calendar-grid" id="calendar-grid"></div>
+            </div>
+
+            <div class="reset-container">
+                <button class="btn-danger" onclick="resetAllProgress()">Réinitialiser ma progression</button>
             </div>
         </section>
     </main>
